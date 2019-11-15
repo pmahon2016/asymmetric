@@ -13,7 +13,7 @@ dpubkey = rsa.decrypt(ekey,private_key)
 
 cipher = Fernet(dpubkey)
 
-encrypted_data = open('encrypted_data','rb')
+encrypted_data = open('encrypted_file','rb')
 edata = encrypted_data.read()
 
 

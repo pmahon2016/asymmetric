@@ -7,10 +7,14 @@ key = skey.read()
 # create the cipher
 cipher = Fernet(key)
 
-# encrypt the data
-encrypted_data = cipher.encrypt(b'this is a test for my encryption')
+# open file for encrypting
 
-edata = open('encrypted_data','wb')
+myfile = open('mysecretdata','rb')
+myfiledata= myfile.read()
+
+# encrypt the data
+encrypted_data = cipher.encrypt(myfiledata)
+edata = open('encrypted_file','wb')
 edata.write(encrypted_data)
 
 print(encrypted_data)
